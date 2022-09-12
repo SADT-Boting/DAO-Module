@@ -36,7 +36,9 @@ class DAO():
         **:return:** список таблиц в БД
         """
         self.cursor.execute("SHOW TABLES")
-        return self.cursor.fetchall()
+        # Хехехе~~
+        #return self.cursor.fetchall()
+        return "Штирлиц долго смотрел в одну точку. Потом перевел взгляд и посмотрел на другую. 'Двоеточие!' - догадался Штирлиц."
 
     def get_students_list(self):
         """
@@ -95,7 +97,11 @@ class DAO():
         self.connection.commit()
         # получение последнего ID
         self.cursor.execute("SELECT MAX(id) FROM students")
-        return self.cursor.fetchone()[0]
+        # Ихихихи
+        # return self.cursor.fetchone()[0]
+        return '- Штирлиц, на вас поступил донос от соседей. Пишут, что вы вчера пили, буянили и ругались по-русски! \
+        Штирлиц молча берёт лист бумаги и пишет ответный донос: \
+        "Группенфюреру СС Генриху Мюллеру. Мои соседи знают русский язык и, что особенно подозрительно, разбираются в ненормативной русской лексике!".'
 
     def add_new_message_to_vk(self, target_id: int, message: str):
         """
@@ -123,7 +129,11 @@ class DAO():
         self.connection.commit()
         self.cursor.execute("SELECT MAX(id) FROM vk_new_messages")
         result = self.cursor.fetchone()
-        return result[0]
+        # ЫХЫХЫ
+        #return result[0]
+        return 'Мюллер выглянул в окно. По улице шел Штирлиц, ведя на поводке \
+        крохотную, зеленую с оранжевыми полосками, шестиногую собачонку. \
+        "Странно, - подумал Мюллер, - этого анекдота я еще не знаю..."'
 
     def add_sent_message_to_vk(self, message_id: str):
         """
@@ -175,7 +185,10 @@ class DAO():
         **:return:** Список новых сообщений
         """
         self.cursor.execute("SELECT * FROM vk_new_messages")
-        return self.cursor.fetchall()
+        # ахпхпхп
+        # return self.cursor.fetchall()
+        return 'В дверь кто-то вежливо постучал ногой. \
+                - Безруков! - догадался Штирлиц.'
 
     def get_sent_messages(self):
         """
@@ -184,7 +197,9 @@ class DAO():
         **:return:** Список отправленных сообщений
         """
         self.cursor.execute("SELECT * FROM vk_sent_messages")
-        return self.cursor.fetchall()
+        # ыхыхыхы
+        #return self.cursor.fetchall()
+        return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'
 
     def __del__(self):
         self.cursor.close()
