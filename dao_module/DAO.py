@@ -9,10 +9,10 @@ class DAO():
     """
     def __init__(self):
         self.connection = pymysql.connect(
-            host="sql11.freesqldatabase.com",
-            user="sql11518288",
-            password="jtQRnN3wjt",
-            database="sql11518288"
+            host="bk0lqfuarhvtxbknpbyc-mysql.services.clever-cloud.com",
+            user="uo7runc9q9kkb2nh",
+            password="OdVC8pMyDGO88R8o5gyL", # путен, не смотри
+            database="bk0lqfuarhvtxbknpbyc"
         )
         self.cursor = self.connection.cursor()
         self.cursor.execute("USE sql11518288")
@@ -201,6 +201,29 @@ class DAO():
         # ыхыхыхы
         return self.cursor.fetchall()
         #return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'
+
+    def select_request(self, table, keys, values, condition = None):
+        """
+        Метод для составления select-запроса
+        :param table: название таблицы
+        :param keys: список заполняемых атрибутов
+        :param values: список значений атрибутов
+        :param condition: условия для блока WHERE
+        :return: строка в виде select-запроса
+        """
+        request = "SELECT FROM "
+        if not isinstance(table, str): raise ValueError("table должно быть строкой")
+        if not isinstance(keys, list): raise ValueError("keys должно быть списком")
+        if not isinstance(values, list): raise ValueError("values должно быть списком")
+        if len(keys) != len(values):
+            raise ValueError("keys и values должны быть одной длины")
+        if condition != None and not isinstance(condition, list):
+            raise ValueError("condition должно быть списком или None")
+        request += table + f"({keys}) VALUES({values})"
+        if condition is not None:
+            requests += f"WHERE {condition}"
+        return request
+
 
     def __del__(self):
         self.cursor.close()
