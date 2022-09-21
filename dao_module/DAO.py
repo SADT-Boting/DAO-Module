@@ -202,14 +202,19 @@ class DAO():
         return self.cursor.fetchall()
         #return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'
 
-    def select_request(self, table, keys, values, condition = None):
+    def select_request(self, table, keys, values, predicat = None):
         """
         Метод для составления select-запроса
-        :param table: название таблицы
-        :param keys: список заполняемых атрибутов
-        :param values: список значений атрибутов
-        :param condition: условия для блока WHERE
-        :return: строка в виде select-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:param predicat**: условия для блока WHERE
+
+        **:return**: строка в виде select-запроса
         """
         request = "SELECT FROM "
         if not isinstance(table, str): raise ValueError("table должно быть строкой")
@@ -217,13 +222,50 @@ class DAO():
         if not isinstance(values, list): raise ValueError("values должно быть списком")
         if len(keys) != len(values):
             raise ValueError("keys и values должны быть одной длины")
-        if condition != None and not isinstance(condition, list):
+        if predicat != None and not isinstance(predicat, list):
             raise ValueError("condition должно быть списком или None")
         request += table + f"({keys}) VALUES({values})"
-        if condition is not None:
-            requests += f"WHERE {condition}"
+        if predicat is not None:
+            request += f"WHERE {predicat}"
         return request
 
+    def insert_request(self, table, keys, values):
+        """
+        Метод для составления insert-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:return**: строка в виде insert-запроса
+        """
+        request = "INSERT INTO "
+        if not isinstance(table, str): raise ValueError("table должно быть строкой")
+        if not isinstance(keys, list): raise ValueError("keys должно быть списком")
+        if not isinstance(values, list): raise ValueError("values должно быть списком")
+        if len(keys) != len(values):
+            raise ValueError("keys и values должны быть одной длины")
+        request += f"{table}({keys}) VALUES({values})"
+        return request
+
+    def delete_request(self, table, predicat):
+        """
+        Метод для составления delete-запроса
+
+        **:param table**: название таблицы
+
+        **:param predicat**: условия для блока WHERE
+        
+        **:return**: строка в виде delete-запроса
+        """
+        request = "DELETE FROM "
+        if not isinstance(table, str): raise ValueError("table должно быть строкой")
+        if not isinstance(predicat, list) :
+            raise ValueError("condition должно быть списком или None")
+        request += f"{table} WHERE {predicat}"
+        return request
 
     def __del__(self):
         self.cursor.close()

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)http://localhost:8888/DAO.html#DAO.DAO.add_sent_message_to_vk -->
-<html lang="en" m_init="2233643202208021523"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0053)http://localhost:5555/DAO.html#DAO.DAO.delete_request -->
+<html lang="en" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc 0.10.0">
@@ -14,13 +14,84 @@
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
 <script defer="" src="./DAO API documentation_files/highlight.min.js.загружено" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin=""></script>
 <script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
-</head>
-<body>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./DAO API documentation_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./DAO API documentation_files/m=el_main"></script></head>
+<body style="position: relative; min-height: 100%; top: 40px;"><div class="skiptranslate" style=""><iframe id=":0.container" class="goog-te-banner-frame skiptranslate" frameborder="0" src="javascript:&#39;&#39;" style="visibility:visible" src="./DAO API documentation_files/saved_resource.html"></iframe></div><script type="text/javascript">function _translatepage_9dc067ad252ebecc3f97dc8a2ce2faad(from_lang)
+							{
+//								if (from_lang == 'ru')
+								if (["","ru"].indexOf(from_lang) >= 0)
+									return;
+
+								if ('google' == "bing")
+								{
+									var eWidgetDiv = document.getElementById('MicrosoftTranslatorWidget');
+									if (!eWidgetDiv)
+									{
+										var eWidgetDiv = document.createElement('DIV');
+										eWidgetDiv.id = 'MicrosoftTranslatorWidget';
+										eWidgetDiv.style.display = 'none';
+										document.body.insertBefore(eWidgetDiv, document.body.firstChild);
+									}
+
+									window.document.cookie = "mstmode=notify";
+									window.document.cookie = "mstto=" + 'ru';
+
+									var eWidgetScript = document.createElement('SCRIPT');
+									eWidgetScript.type = "text/javascript";
+									eWidgetScript.charset = "UTF-8";
+/*
+									eWidgetScript.onload = function()
+									{
+										if (window.Microsoft && window.Microsoft.Translator)
+											Microsoft.Translator.translate(document.body, from_lang, 'ru');
+									}
+*/
+									if (from_lang == "auto")
+										from_lang = "";
+									// !! for moderators: this block is not active for some browsers! Check upper second `if`!
+									eWidgetScript.src = 'https://www.microsofttranslator.com/ajax/v2/widget.aspx?mode=manual&from=' + from_lang + '&to=' + 'ru' + '&toolbar=thin';
+/*
+									eWidgetScript.src = ((window.location && window.location.href && window.location.href.indexOf('https') == 0)
+															? "https://ssl.microsofttranslator.com"
+															: "http://www.microsofttranslator.com"
+														) + "/ajax/v2/widget.aspx?mode=manual&from=_"+from_lang + "&to=" + 'ru' + "&layout=ts";
+*/
+									window._mstAppId = window.my_mstAppId;
+									document.body.insertBefore(eWidgetScript, document.body.firstChild);
+								}
+								else if ('google' == "yandex")
+								{
+									var ytWidget = document.createElement("DIV");
+									ytWidget.id = "ytWidget";
+									window.document.body.insertBefore(ytWidget, window.document.body.childNodes[0]);
+
+									var yTransScript = window.document.createElement("SCRIPT");
+									// !! for moderators: this block is not active for some browsers! Check upper second `if`!
+									yTransScript.src = "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=" + from_lang + "&defaultLang=ru&widgetTheme=light&autoMode=false";
+									window.document.body.appendChild( yTransScript );
+								}
+								else	// google
+								{
+									var onGoogleTranslateElementInitFunctionName = arguments.callee.name.replace(/^_[^_]+_/, "_googleTranslateElementInit_");		// we don't see here scriptCfg, because we redefine this function as inline
+									window[onGoogleTranslateElementInitFunctionName] = function()
+									{
+//										window.google.translate._const._cl = 'ru';
+										new window.google.translate.TranslateElement({
+											pageLanguage: from_lang,
+											autoDisplay: false
+										}).showBanner(false);
+									};
+
+									var gTransScript = window.document.createElement("SCRIPT");
+									// !! for moderators: this block is not active for some browsers! Check upper second `if`!
+									gTransScript.src = "https://translate.google." + (false ? "cn" : "com") + "/translate_a/element.js?cb="+onGoogleTranslateElementInitFunctionName+"&hl="+'ru';
+									window.document.body.appendChild( gTransScript );
+								}
+							}</script>
 <main>
 <article id="content">
 <header>
 <nav class="http-server-breadcrumbs">
-<a href="http://localhost:8888/">All packages</a>
+<a href="http://localhost:5555/">All packages</a>
 </nav>
 <h1 class="title">Module <code>DAO</code></h1>
 </header>
@@ -40,12 +111,26 @@
     """</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span>
         self.connection = pymysql.connect(
-            host=<span class="hljs-string">"sql11.freesqldatabase.com"</span>,
-            user=<span class="hljs-string">"sql11518288"</span>,
-            password=<span class="hljs-string">"jtQRnN3wjt"</span>,
-            database=<span class="hljs-string">"sql11518288"</span>)
+            host=<span class="hljs-string">"bk0lqfuarhvtxbknpbyc-mysql.services.clever-cloud.com"</span>,
+            user=<span class="hljs-string">"uo7runc9q9kkb2nh"</span>,
+            password=<span class="hljs-string">"OdVC8pMyDGO88R8o5gyL"</span>, <span class="hljs-comment"># путен, не смотри</span>
+            database=<span class="hljs-string">"bk0lqfuarhvtxbknpbyc"</span>
+        )
         self.cursor = self.connection.cursor()
         self.cursor.execute(<span class="hljs-string">"USE sql11518288"</span>)
+        self.connection.set_charset(<span class="hljs-string">"UTF8"</span>);
+        <span class="hljs-comment"># Да, это пароль от моей базы данных</span>
+        <span class="hljs-comment"># Мне слишком впадлу заморачиваться и куда-то его прятать</span>
+        <span class="hljs-comment"># Уж точно не когда дедлайн -- неделя</span>
+        <span class="hljs-comment"># Давай ты не будешь шатать мою БД</span>
+        <span class="hljs-comment"># А я расскажу тебе анекдот</span>
+        <span class="hljs-comment"># Короче:</span>
+        <span class="hljs-comment"># Заходит однажды в бар улитка и говорит:</span>
+        <span class="hljs-comment"># - Можно виски с колой?</span>
+        <span class="hljs-comment"># - Простите, но мы не обслуживаем улиток.</span>
+        <span class="hljs-comment"># И бармен вышвырнул ее за дверь.</span>
+        <span class="hljs-comment"># Через неделю заходит опять эта улитка и спрашивает:</span>
+        <span class="hljs-comment"># - Ну и зачем ты это сделал?</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_tables_list</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -54,7 +139,9 @@
         **:return:** список таблиц в БД
         """</span>
         self.cursor.execute(<span class="hljs-string">"SHOW TABLES"</span>)
+        <span class="hljs-comment"># Хехехе~~</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return "Штирлиц долго смотрел в одну точку. Потом перевел взгляд и посмотрел на другую. 'Двоеточие!' - догадался Штирлиц."</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_students_list</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -113,7 +200,11 @@
         self.connection.commit()
         <span class="hljs-comment"># получение последнего ID</span>
         self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM students"</span>)
+        <span class="hljs-comment"># Ихихихи</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchone()[<span class="hljs-number">0</span>]
+        <span class="hljs-comment"># return '- Штирлиц, на вас поступил донос от соседей. Пишут, что вы вчера пили, буянили и ругались по-русски! \</span>
+        <span class="hljs-comment">#Штирлиц молча берёт лист бумаги и пишет ответный донос: \</span>
+        <span class="hljs-comment">#"Группенфюреру СС Генриху Мюллеру. Мои соседи знают русский язык и, что особенно подозрительно, разбираются в ненормативной русской лексике!".'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_new_message_to_vk</span>(<span class="hljs-params">self, target_id: int, message: str</span>):</span>
         <span class="hljs-string">"""
@@ -141,7 +232,11 @@
         self.connection.commit()
         self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM vk_new_messages"</span>)
         result = self.cursor.fetchone()
+        <span class="hljs-comment"># ЫХЫХЫ</span>
         <span class="hljs-keyword">return</span> result[<span class="hljs-number">0</span>]
+        <span class="hljs-comment">#return 'Мюллер выглянул в окно. По улице шел Штирлиц, ведя на поводке \</span>
+        <span class="hljs-comment">#крохотную, зеленую с оранжевыми полосками, шестиногую собачонку. \</span>
+        <span class="hljs-comment">#"Странно, - подумал Мюллер, - этого анекдота я еще не знаю..."'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_sent_message_to_vk</span>(<span class="hljs-params">self, message_id: str</span>):</span>
         <span class="hljs-string">"""
@@ -193,7 +288,10 @@
         **:return:** Список новых сообщений
         """</span>
         self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_new_messages"</span>)
+        <span class="hljs-comment"># ахпхпхп</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return 'В дверь кто-то вежливо постучал ногой. \</span>
+        <span class="hljs-comment">#       - Безруков! - догадался Штирлиц.'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_sent_messages</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -202,7 +300,74 @@
         **:return:** Список отправленных сообщений
         """</span>
         self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_sent_messages"</span>)
+        <span class="hljs-comment"># ыхыхыхы</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select_request</span>(<span class="hljs-params">self, table, keys, values, predicat = None</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления select-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:param predicat**: условия для блока WHERE
+
+        **:return**: строка в виде select-запроса
+        """</span>
+        request = <span class="hljs-string">"SELECT FROM "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> len(keys) != len(values):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+        <span class="hljs-keyword">if</span> predicat != <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> isinstance(predicat, list):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+        request += table + <span class="hljs-string">f"(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+        <span class="hljs-keyword">if</span> predicat <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            request += <span class="hljs-string">f"WHERE <span class="hljs-subst">{predicat}</span>"</span>
+        <span class="hljs-keyword">return</span> request
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_request</span>(<span class="hljs-params">self, table, keys, values</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления insert-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:return**: строка в виде insert-запроса
+        """</span>
+        request = <span class="hljs-string">"INSERT INTO "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> len(keys) != len(values):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+        request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span>(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+        <span class="hljs-keyword">return</span> request
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_request</span>(<span class="hljs-params">self, table, predicat</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления delete-запроса
+
+        **:param table**: название таблицы
+
+        **:param predicat**: условия для блока WHERE
+        
+        **:return**: строка в виде delete-запроса
+        """</span>
+        request = <span class="hljs-string">"DELETE FROM "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(predicat, list) :
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+        request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span> WHERE <span class="hljs-subst">{predicat}</span>"</span>
+        <span class="hljs-keyword">return</span> request
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__del__</span>(<span class="hljs-params">self</span>):</span>
         self.cursor.close()
@@ -233,12 +398,26 @@
     """</span>
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span>
         self.connection = pymysql.connect(
-            host=<span class="hljs-string">"sql11.freesqldatabase.com"</span>,
-            user=<span class="hljs-string">"sql11518288"</span>,
-            password=<span class="hljs-string">"jtQRnN3wjt"</span>,
-            database=<span class="hljs-string">"sql11518288"</span>)
+            host=<span class="hljs-string">"bk0lqfuarhvtxbknpbyc-mysql.services.clever-cloud.com"</span>,
+            user=<span class="hljs-string">"uo7runc9q9kkb2nh"</span>,
+            password=<span class="hljs-string">"OdVC8pMyDGO88R8o5gyL"</span>, <span class="hljs-comment"># путен, не смотри</span>
+            database=<span class="hljs-string">"bk0lqfuarhvtxbknpbyc"</span>
+        )
         self.cursor = self.connection.cursor()
         self.cursor.execute(<span class="hljs-string">"USE sql11518288"</span>)
+        self.connection.set_charset(<span class="hljs-string">"UTF8"</span>);
+        <span class="hljs-comment"># Да, это пароль от моей базы данных</span>
+        <span class="hljs-comment"># Мне слишком впадлу заморачиваться и куда-то его прятать</span>
+        <span class="hljs-comment"># Уж точно не когда дедлайн -- неделя</span>
+        <span class="hljs-comment"># Давай ты не будешь шатать мою БД</span>
+        <span class="hljs-comment"># А я расскажу тебе анекдот</span>
+        <span class="hljs-comment"># Короче:</span>
+        <span class="hljs-comment"># Заходит однажды в бар улитка и говорит:</span>
+        <span class="hljs-comment"># - Можно виски с колой?</span>
+        <span class="hljs-comment"># - Простите, но мы не обслуживаем улиток.</span>
+        <span class="hljs-comment"># И бармен вышвырнул ее за дверь.</span>
+        <span class="hljs-comment"># Через неделю заходит опять эта улитка и спрашивает:</span>
+        <span class="hljs-comment"># - Ну и зачем ты это сделал?</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_tables_list</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -247,7 +426,9 @@
         **:return:** список таблиц в БД
         """</span>
         self.cursor.execute(<span class="hljs-string">"SHOW TABLES"</span>)
+        <span class="hljs-comment"># Хехехе~~</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return "Штирлиц долго смотрел в одну точку. Потом перевел взгляд и посмотрел на другую. 'Двоеточие!' - догадался Штирлиц."</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_students_list</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -306,7 +487,11 @@
         self.connection.commit()
         <span class="hljs-comment"># получение последнего ID</span>
         self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM students"</span>)
+        <span class="hljs-comment"># Ихихихи</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchone()[<span class="hljs-number">0</span>]
+        <span class="hljs-comment"># return '- Штирлиц, на вас поступил донос от соседей. Пишут, что вы вчера пили, буянили и ругались по-русски! \</span>
+        <span class="hljs-comment">#Штирлиц молча берёт лист бумаги и пишет ответный донос: \</span>
+        <span class="hljs-comment">#"Группенфюреру СС Генриху Мюллеру. Мои соседи знают русский язык и, что особенно подозрительно, разбираются в ненормативной русской лексике!".'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_new_message_to_vk</span>(<span class="hljs-params">self, target_id: int, message: str</span>):</span>
         <span class="hljs-string">"""
@@ -334,7 +519,11 @@
         self.connection.commit()
         self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM vk_new_messages"</span>)
         result = self.cursor.fetchone()
+        <span class="hljs-comment"># ЫХЫХЫ</span>
         <span class="hljs-keyword">return</span> result[<span class="hljs-number">0</span>]
+        <span class="hljs-comment">#return 'Мюллер выглянул в окно. По улице шел Штирлиц, ведя на поводке \</span>
+        <span class="hljs-comment">#крохотную, зеленую с оранжевыми полосками, шестиногую собачонку. \</span>
+        <span class="hljs-comment">#"Странно, - подумал Мюллер, - этого анекдота я еще не знаю..."'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_sent_message_to_vk</span>(<span class="hljs-params">self, message_id: str</span>):</span>
         <span class="hljs-string">"""
@@ -386,7 +575,10 @@
         **:return:** Список новых сообщений
         """</span>
         self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_new_messages"</span>)
+        <span class="hljs-comment"># ахпхпхп</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return 'В дверь кто-то вежливо постучал ногой. \</span>
+        <span class="hljs-comment">#       - Безруков! - догадался Штирлиц.'</span>
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_sent_messages</span>(<span class="hljs-params">self</span>):</span>
         <span class="hljs-string">"""
@@ -395,7 +587,74 @@
         **:return:** Список отправленных сообщений
         """</span>
         self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_sent_messages"</span>)
+        <span class="hljs-comment"># ыхыхыхы</span>
         <span class="hljs-keyword">return</span> self.cursor.fetchall()
+        <span class="hljs-comment">#return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select_request</span>(<span class="hljs-params">self, table, keys, values, predicat = None</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления select-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:param predicat**: условия для блока WHERE
+
+        **:return**: строка в виде select-запроса
+        """</span>
+        request = <span class="hljs-string">"SELECT FROM "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> len(keys) != len(values):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+        <span class="hljs-keyword">if</span> predicat != <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> isinstance(predicat, list):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+        request += table + <span class="hljs-string">f"(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+        <span class="hljs-keyword">if</span> predicat <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            request += <span class="hljs-string">f"WHERE <span class="hljs-subst">{predicat}</span>"</span>
+        <span class="hljs-keyword">return</span> request
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_request</span>(<span class="hljs-params">self, table, keys, values</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления insert-запроса
+
+        **:param table**: название таблицы
+
+        **:param keys**: список заполняемых атрибутов
+
+        **:param values**: список значений атрибутов
+
+        **:return**: строка в виде insert-запроса
+        """</span>
+        request = <span class="hljs-string">"INSERT INTO "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+        <span class="hljs-keyword">if</span> len(keys) != len(values):
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+        request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span>(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+        <span class="hljs-keyword">return</span> request
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_request</span>(<span class="hljs-params">self, table, predicat</span>):</span>
+        <span class="hljs-string">"""
+        Метод для составления delete-запроса
+
+        **:param table**: название таблицы
+
+        **:param predicat**: условия для блока WHERE
+        
+        **:return**: строка в виде delete-запроса
+        """</span>
+        request = <span class="hljs-string">"DELETE FROM "</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(predicat, list) :
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+        request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span> WHERE <span class="hljs-subst">{predicat}</span>"</span>
+        <span class="hljs-keyword">return</span> request
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__del__</span>(<span class="hljs-params">self</span>):</span>
         self.cursor.close()
@@ -441,7 +700,11 @@
     self.connection.commit()
     self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM vk_new_messages"</span>)
     result = self.cursor.fetchone()
-    <span class="hljs-keyword">return</span> result[<span class="hljs-number">0</span>]</code></pre>
+    <span class="hljs-comment"># ЫХЫХЫ</span>
+    <span class="hljs-keyword">return</span> result[<span class="hljs-number">0</span>]
+    <span class="hljs-comment">#return 'Мюллер выглянул в окно. По улице шел Штирлиц, ведя на поводке \</span>
+    <span class="hljs-comment">#крохотную, зеленую с оранжевыми полосками, шестиногую собачонку. \</span>
+    <span class="hljs-comment">#"Странно, - подумал Мюллер, - этого анекдота я еще не знаю..."'</span></code></pre>
 </details>
 </dd>
 <dt id="DAO.DAO.add_new_student"><code class="name flex">
@@ -499,7 +762,11 @@
     self.connection.commit()
     <span class="hljs-comment"># получение последнего ID</span>
     self.cursor.execute(<span class="hljs-string">"SELECT MAX(id) FROM students"</span>)
-    <span class="hljs-keyword">return</span> self.cursor.fetchone()[<span class="hljs-number">0</span>]</code></pre>
+    <span class="hljs-comment"># Ихихихи</span>
+    <span class="hljs-keyword">return</span> self.cursor.fetchone()[<span class="hljs-number">0</span>]
+    <span class="hljs-comment"># return '- Штирлиц, на вас поступил донос от соседей. Пишут, что вы вчера пили, буянили и ругались по-русски! \</span>
+    <span class="hljs-comment">#Штирлиц молча берёт лист бумаги и пишет ответный донос: \</span>
+    <span class="hljs-comment">#"Группенфюреру СС Генриху Мюллеру. Мои соседи знают русский язык и, что особенно подозрительно, разбираются в ненормативной русской лексике!".'</span></code></pre>
 </details>
 </dd>
 <dt id="DAO.DAO.add_sent_message_to_vk"><code class="name flex">
@@ -548,6 +815,36 @@
     self.connection.commit()</code></pre>
 </details>
 </dd>
+<dt id="DAO.DAO.delete_request"><code class="name flex">
+<span>def <span class="ident">delete_request</span></span>(<span>self, table, predicat)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Метод для составления delete-запроса</p>
+<p><strong>:param table</strong>: название таблицы</p>
+<p><strong>:param predicat</strong>: условия для блока WHERE</p>
+<p><strong>:return</strong>: строка в виде delete-запроса</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_request</span>(<span class="hljs-params">self, table, predicat</span>):</span>
+    <span class="hljs-string">"""
+    Метод для составления delete-запроса
+
+    **:param table**: название таблицы
+
+    **:param predicat**: условия для блока WHERE
+    
+    **:return**: строка в виде delete-запроса
+    """</span>
+    request = <span class="hljs-string">"DELETE FROM "</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(predicat, list) :
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+    request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span> WHERE <span class="hljs-subst">{predicat}</span>"</span>
+    <span class="hljs-keyword">return</span> request</code></pre>
+</details>
+</dd>
 <dt id="DAO.DAO.delete_student_by_id"><code class="name flex">
 <span>def <span class="ident">delete_student_by_id</span></span>(<span>self, id:&nbsp;int)</span>
 </code></dt>
@@ -585,7 +882,10 @@
     **:return:** Список новых сообщений
     """</span>
     self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_new_messages"</span>)
-    <span class="hljs-keyword">return</span> self.cursor.fetchall()</code></pre>
+    <span class="hljs-comment"># ахпхпхп</span>
+    <span class="hljs-keyword">return</span> self.cursor.fetchall()
+    <span class="hljs-comment">#return 'В дверь кто-то вежливо постучал ногой. \</span>
+    <span class="hljs-comment">#       - Безруков! - догадался Штирлиц.'</span></code></pre>
 </details>
 </dd>
 <dt id="DAO.DAO.get_sent_messages"><code class="name flex">
@@ -605,7 +905,9 @@
     **:return:** Список отправленных сообщений
     """</span>
     self.cursor.execute(<span class="hljs-string">"SELECT * FROM vk_sent_messages"</span>)
-    <span class="hljs-keyword">return</span> self.cursor.fetchall()</code></pre>
+    <span class="hljs-comment"># ыхыхыхы</span>
+    <span class="hljs-keyword">return</span> self.cursor.fetchall()
+    <span class="hljs-comment">#return 'Штирлиц сел на мотоцикл, хлопнул дверцей и уехал.'</span></code></pre>
 </details>
 </dd>
 <dt id="DAO.DAO.get_students_list"><code class="name flex">
@@ -663,7 +965,86 @@
     **:return:** список таблиц в БД
     """</span>
     self.cursor.execute(<span class="hljs-string">"SHOW TABLES"</span>)
-    <span class="hljs-keyword">return</span> self.cursor.fetchall()</code></pre>
+    <span class="hljs-comment"># Хехехе~~</span>
+    <span class="hljs-keyword">return</span> self.cursor.fetchall()
+    <span class="hljs-comment">#return "Штирлиц долго смотрел в одну точку. Потом перевел взгляд и посмотрел на другую. 'Двоеточие!' - догадался Штирлиц."</span></code></pre>
+</details>
+</dd>
+<dt id="DAO.DAO.insert_request"><code class="name flex">
+<span>def <span class="ident">insert_request</span></span>(<span>self, table, keys, values)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Метод для составления insert-запроса</p>
+<p><strong>:param table</strong>: название таблицы</p>
+<p><strong>:param keys</strong>: список заполняемых атрибутов</p>
+<p><strong>:param values</strong>: список значений атрибутов</p>
+<p><strong>:return</strong>: строка в виде insert-запроса</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_request</span>(<span class="hljs-params">self, table, keys, values</span>):</span>
+    <span class="hljs-string">"""
+    Метод для составления insert-запроса
+
+    **:param table**: название таблицы
+
+    **:param keys**: список заполняемых атрибутов
+
+    **:param values**: список значений атрибутов
+
+    **:return**: строка в виде insert-запроса
+    """</span>
+    request = <span class="hljs-string">"INSERT INTO "</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+    <span class="hljs-keyword">if</span> len(keys) != len(values):
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+    request += <span class="hljs-string">f"<span class="hljs-subst">{table}</span>(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+    <span class="hljs-keyword">return</span> request</code></pre>
+</details>
+</dd>
+<dt id="DAO.DAO.select_request"><code class="name flex">
+<span>def <span class="ident">select_request</span></span>(<span>self, table, keys, values, predicat=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Метод для составления select-запроса</p>
+<p><strong>:param table</strong>: название таблицы</p>
+<p><strong>:param keys</strong>: список заполняемых атрибутов</p>
+<p><strong>:param values</strong>: список значений атрибутов</p>
+<p><strong>:param predicat</strong>: условия для блока WHERE</p>
+<p><strong>:return</strong>: строка в виде select-запроса</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python hljs"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">select_request</span>(<span class="hljs-params">self, table, keys, values, predicat = None</span>):</span>
+    <span class="hljs-string">"""
+    Метод для составления select-запроса
+
+    **:param table**: название таблицы
+
+    **:param keys**: список заполняемых атрибутов
+
+    **:param values**: список значений атрибутов
+
+    **:param predicat**: условия для блока WHERE
+
+    **:return**: строка в виде select-запроса
+    """</span>
+    request = <span class="hljs-string">"SELECT FROM "</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(table, str): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"table должно быть строкой"</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(keys, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys должно быть списком"</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isinstance(values, list): <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"values должно быть списком"</span>)
+    <span class="hljs-keyword">if</span> len(keys) != len(values):
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"keys и values должны быть одной длины"</span>)
+    <span class="hljs-keyword">if</span> predicat != <span class="hljs-literal">None</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> isinstance(predicat, list):
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"condition должно быть списком или None"</span>)
+    request += table + <span class="hljs-string">f"(<span class="hljs-subst">{keys}</span>) VALUES(<span class="hljs-subst">{values}</span>)"</span>
+    <span class="hljs-keyword">if</span> predicat <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+        request += <span class="hljs-string">f"WHERE <span class="hljs-subst">{predicat}</span>"</span>
+    <span class="hljs-keyword">return</span> request</code></pre>
 </details>
 </dd>
 </dl>
@@ -677,19 +1058,22 @@
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="http://localhost:8888/DAO.html#header-classes">Classes</a></h3>
+<li><h3><a href="http://localhost:5555/DAO.html#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="DAO.DAO" href="http://localhost:8888/DAO.html#DAO.DAO">DAO</a></code></h4>
+<h4><code><a title="DAO.DAO" href="http://localhost:5555/DAO.html#DAO.DAO">DAO</a></code></h4>
 <ul class="">
-<li><code><a title="DAO.DAO.add_new_message_to_vk" href="http://localhost:8888/DAO.html#DAO.DAO.add_new_message_to_vk">add_new_message_to_vk</a></code></li>
-<li><code><a title="DAO.DAO.add_new_student" href="http://localhost:8888/DAO.html#DAO.DAO.add_new_student">add_new_student</a></code></li>
-<li><code><a title="DAO.DAO.add_sent_message_to_vk" href="http://localhost:8888/DAO.html#DAO.DAO.add_sent_message_to_vk">add_sent_message_to_vk</a></code></li>
-<li><code><a title="DAO.DAO.delete_student_by_id" href="http://localhost:8888/DAO.html#DAO.DAO.delete_student_by_id">delete_student_by_id</a></code></li>
-<li><code><a title="DAO.DAO.get_new_messages" href="http://localhost:8888/DAO.html#DAO.DAO.get_new_messages">get_new_messages</a></code></li>
-<li><code><a title="DAO.DAO.get_sent_messages" href="http://localhost:8888/DAO.html#DAO.DAO.get_sent_messages">get_sent_messages</a></code></li>
-<li><code><a title="DAO.DAO.get_students_list" href="http://localhost:8888/DAO.html#DAO.DAO.get_students_list">get_students_list</a></code></li>
-<li><code><a title="DAO.DAO.get_tables_list" href="http://localhost:8888/DAO.html#DAO.DAO.get_tables_list">get_tables_list</a></code></li>
+<li><code><a title="DAO.DAO.add_new_message_to_vk" href="http://localhost:5555/DAO.html#DAO.DAO.add_new_message_to_vk">add_new_message_to_vk</a></code></li>
+<li><code><a title="DAO.DAO.add_new_student" href="http://localhost:5555/DAO.html#DAO.DAO.add_new_student">add_new_student</a></code></li>
+<li><code><a title="DAO.DAO.add_sent_message_to_vk" href="http://localhost:5555/DAO.html#DAO.DAO.add_sent_message_to_vk">add_sent_message_to_vk</a></code></li>
+<li><code><a title="DAO.DAO.delete_request" href="http://localhost:5555/DAO.html#DAO.DAO.delete_request">delete_request</a></code></li>
+<li><code><a title="DAO.DAO.delete_student_by_id" href="http://localhost:5555/DAO.html#DAO.DAO.delete_student_by_id">delete_student_by_id</a></code></li>
+<li><code><a title="DAO.DAO.get_new_messages" href="http://localhost:5555/DAO.html#DAO.DAO.get_new_messages">get_new_messages</a></code></li>
+<li><code><a title="DAO.DAO.get_sent_messages" href="http://localhost:5555/DAO.html#DAO.DAO.get_sent_messages">get_sent_messages</a></code></li>
+<li><code><a title="DAO.DAO.get_students_list" href="http://localhost:5555/DAO.html#DAO.DAO.get_students_list">get_students_list</a></code></li>
+<li><code><a title="DAO.DAO.get_tables_list" href="http://localhost:5555/DAO.html#DAO.DAO.get_tables_list">get_tables_list</a></code></li>
+<li><code><a title="DAO.DAO.insert_request" href="http://localhost:5555/DAO.html#DAO.DAO.insert_request">insert_request</a></code></li>
+<li><code><a title="DAO.DAO.select_request" href="http://localhost:5555/DAO.html#DAO.DAO.select_request">select_request</a></code></li>
 </ul>
 </li>
 </ul>
@@ -705,8 +1089,8 @@ setInterval(() =>
 fetch(window.location.href, {
 method: "HEAD",
 cache: "no-store",
-headers: {"If-None-Match": "1662900247.0023625"},
+headers: {"If-None-Match": "1663757052.4199235"},
 }).then(response => response.ok && window.location.reload()), 700);
 </script>
 
-</body></html>
+<script type="text/javascript">_translatepage_9dc067ad252ebecc3f97dc8a2ce2faad("en");</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./DAO API documentation_files/translate_24dp.png" width="20" height="20" alt="Google Переводчик"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Исходный текст</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Предложить лучший вариант перевода</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><script src="./DAO API documentation_files/element.js.загружено"></script><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Язык виджета Google Переводчика" style="visibility: visible; box-sizing: content-box; width: 1388px; height: 263px; display: none;" src="./DAO API documentation_files/saved_resource(1).html"></iframe><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Язык виджета Google Переводчика" style="visibility: visible; box-sizing: content-box; width: 241px; height: 69px; display: none;" src="./DAO API documentation_files/saved_resource(2).html"></iframe></body></html>
