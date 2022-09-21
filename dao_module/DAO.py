@@ -15,7 +15,7 @@ class DAO():
             database="bk0lqfuarhvtxbknpbyc"
         )
         self.cursor = self.connection.cursor()
-        self.cursor.execute("USE sql11518288")
+        self.cursor.execute("USE `bk0lqfuarhvtxbknpbyc`")
         self.connection.set_charset("UTF8");
         # Да, это пароль от моей базы данных
         # Мне слишком впадлу заморачиваться и куда-то его прятать
@@ -257,7 +257,7 @@ class DAO():
         **:param table**: название таблицы
 
         **:param predicat**: условия для блока WHERE
-        
+
         **:return**: строка в виде delete-запроса
         """
         request = "DELETE FROM "
